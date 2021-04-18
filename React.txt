@@ -1,0 +1,124 @@
+Some of the basic concepts of javascript you should know before learn React -
+
+1. we define variables with let and const statements. for the purposes f the react documentaion, you can consider them equivalent to var.
+
+2. We use the class keyword to define javascript classes. there are two things worth remembering about them. Firstly, unlike with objects, you don't need to put commas between class method definitions. 
+Secondly, unlike many other languages with classes, in JS the value of this in a method depends on how it is called.
+
+3. sometimes use =>  to define "arrow function". they're like regular function but shorter. For example , x = > x*2 is roughly equivalent to 
+function(x)
+{
+    return x*2;
+}
+
+
+-------------------------------------------
+rendering element example 
+
+function Clock()
+{
+  const clock = (
+    <div>
+      <h2> The Time is : </h2>
+      <h2> {new Date().toLocaleTimeString()}</h2>
+    </div>
+  );
+  ReactDOM.render(clock, document.getElementById('root'));
+}
+setInterval(Clock,1000);
+
+********************************************
+
+props in react - 
+we can  simply understand it as class concept 
+
+function Welcome(props){
+  return <h1> Hello, {props.name}
+              age: {props.age} lcoation:{props.lcoation}</h1>;
+}
+const wel = <Welcome
+ name="Dheeraj"
+  age="21" lcoation ="bhopal"/>;
+
+
+props - class
+props.name , props.age, props.lcoation - data
+
+******************************************
+We can render a element many time 
+
+function App(){
+  return(
+    <div>
+      <Welcome name="Dheeraj" />
+      <Welcome name="Dharamveer" />
+      <Welcome name="Dhanvantri" />
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
+);
+***********************************
+
+
+example use of element rendering 
+
+
+function formatDate(date)
+{
+  return date.toLocaleDateString();
+}
+
+const comment = {
+  date: new Date(),
+  text: 'We are learning react!',
+  author:
+  {
+    name: 'Dheeraj',
+    age: '21'
+  },
+}
+
+
+function Comment(props){
+  return(
+    <div className="Comment">
+      <div className="UserInfo">
+        <h1> Hello, i am {props.author.name}</h1>
+        <div className="UserAge">
+          <p> Age of dheeraj:  {props.author.age} </p>
+         
+        </div>
+        <div className="Comment-text">
+          {props.text}
+        </div>
+        <div className="Comment-date">
+          {formatDate(props.date)}
+        </div>
+
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.render(
+  <Comment
+  date={comment.date}
+  text={comment.text}
+  author={comment.author} />,
+  document.getElementById('root')
+);
+
+**********************************
+
+remember : 
+props are read-only 
+means whether you declare a component as a function or a class, it must never modify it's own props. Consider this function
+
+function sum(a,b)
+{
+    return a+b;
+}
