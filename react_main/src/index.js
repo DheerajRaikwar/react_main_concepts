@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+import reportWebVitals from './reportWebVitals';
+
 ReactDOM.render(
  
   <h1> Hello Dheeraj! Happy Learning </h1>,
