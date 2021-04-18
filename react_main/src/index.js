@@ -4,9 +4,11 @@ import './index.css';
 
 import reportWebVitals from './reportWebVitals';
 
+const Jsx = 'Use JSX';
+const ele = <h2> Using jsx element here = {Jsx} </h2>;
+
 ReactDOM.render(
- 
-  <h1> Hello Dheeraj! Happy Learning </h1>,
+  ele,
   document.getElementById('root')
 );
 
