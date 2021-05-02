@@ -1,9 +1,7 @@
 import React from 'react'
-
+import Hero from '../component/Hero'
 export default function Cities() {
     return (
-        <div>
-            <h2> i am in Cities</h2>
-        </div>
+        <Hero hero="CitiesHero"/>
     )
 }

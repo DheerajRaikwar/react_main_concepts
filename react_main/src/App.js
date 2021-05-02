@@ -5,7 +5,7 @@ import Home from './Pages/Home';
 import Cities from './Pages/Cities';
 import ErrorPage from './Pages/ErrorPage';
 import SingleCity from './Pages/SingleCity';
-import Header from './Pages/Header';
+import Header from './component/Header';
 import {Route,Switch} from 'react-router-dom'; 
 
 
